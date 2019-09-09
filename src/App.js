@@ -6,6 +6,7 @@ import BottomRow from "./BottomRow";
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [count, setCount] = useState(0); 
+  const [countAway, setCountAway] = useState(0); 
 
   return (
     <div className="container">
@@ -21,7 +22,7 @@ function App() {
           <div className="timer">00:03</div>
           <div className="away">
             <h2 className="away__name">Tigers</h2>
-            <div className="away__score">{count}</div>
+            <div className="away__score">{countAway}</div>
           </div>
         </div>
         <BottomRow />
@@ -33,8 +34,8 @@ function App() {
           <button className="homeButtons__fieldGoal" onClick={() => setCount(count + 3)}>Home Field Goal</button>
         </div>
         <div className="awayButtons">
-          <button className="awayButtons__touchdown" onClick={() => setCount(count + 7)}>Away Touchdown</button>
-          <button className="awayButtons__fieldGoal" onClick={() => setCount(count + 3)}>Away Field Goal</button>
+          <button className="awayButtons__touchdown" onClick={() => setCountAway(countAway + 7)}>Away Touchdown</button>
+          <button className="awayButtons__fieldGoal" onClick={() => setCountAway(countAway + 3)}>Away Field Goal</button>
         </div>
       </section>
     </div>
